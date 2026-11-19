@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora Científica</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="unit">
+  <span class="screw tl"></span><span class="screw tr"></span>
+  <span class="screw bl"></span><span class="screw br"></span>
+
+  <div class="plate">
+    <span class="brand">Laboratório · Instrumentos</span>
+    <span class="model">MOD. SC-100</span>
+  </div>
+
+  <div class="display-housing">
+    <div class="mode-row">
+      <span id="modeDeg" class="active">DEG</span>
+      <span id="modeRad">RAD</span>
+      <span id="modeInv">INV</span>
+    </div>
+    <div class="expr" id="expr">&nbsp;</div>
+    <div class="result" id="result">0</div>
+  </div>
+
+  <div class="pad">
+    <button class="fn" data-fn="inv">INV</button>
+    <button class="fn" data-fn="sin">sin</button>
+    <button class="fn" data-fn="cos">cos</button>
+    <button class="fn" data-fn="tan">tan</button>
+    <button class="clear" data-action="clear">C</button>
+
+    <button class="fn" data-fn="log">log</button>
+    <button class="fn" data-fn="ln">ln</button>
+    <button class="fn" data-op="(">(</button>
+    <button class="fn" data-op=")">)</button>
+    <button class="op" data-action="back">⌫</button>
+
+    <button class="fn" data-fn="sqrt">√</button>
+    <button class="num" data-op="7">7</button>
+    <button class="num" data-op="8">8</button>
+    <button class="num" data-op="9">9</button>
+    <button class="op" data-op="/">÷</button>
+
+    <button class="fn" data-op="^">xʸ</button>
+    <button class="num" data-op="4">4</button>
+    <button class="num" data-op="5">5</button>
+    <button class="num" data-op="6">6</button>
+    <button class="op" data-op="*">×</button>
+
+    <button class="fn" data-op="!">x!</button>
+    <button class="num" data-op="1">1</button>
+    <button class="num" data-op="2">2</button>
+    <button class="num" data-op="3">3</button>
+    <button class="op" data-op="-">−</button>
+
+    <button class="fn" data-const="pi">π</button>
+    <button class="num zero" data-op="0">0</button>
+    <button class="num" data-op=".">.</button>
+    <button class="op" data-op="+">+</button>
+
+    <button class="fn" data-const="e" style="grid-column: span 3;">e</button>
+    <button class="eq" data-action="equals">=</button>
+  </div>
+
+  <div class="toggle-row">
+    <button class="toggle on" id="degToggle">DEG</button>
+    <button class="toggle" id="radToggle">RAD</button>
+    <button class="toggle" id="invToggle">INV</button>
+  </div>
+</div>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>

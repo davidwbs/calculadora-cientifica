@@ -1,0 +1,166 @@
+:root{
+    --panel: #23262b;
+    --panel-dark: #1a1c20;
+    --bezel: #0e0f11;
+    --amber: #ffb454;
+    --amber-dim: #7a5a2c;
+    --key-fn: #34383f;
+    --key-op: #4a3a2a;
+    --key-num: #2b2f36;
+    --key-eq: #b5652f;
+    --text-soft: #9aa0aa;
+    --screw: #45494f;
+  }
+  *{box-sizing:border-box;}
+  html,body{
+    height:100%;
+    margin:0;
+    background:
+      radial-gradient(circle at 50% 0%, #2a2d33 0%, #131417 70%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Courier New', ui-monospace, monospace;
+    padding:24px;
+  }
+
+  .unit{
+    width:420px;
+    max-width:100%;
+    background:linear-gradient(180deg, var(--panel) 0%, var(--panel-dark) 100%);
+    border-radius:14px;
+    padding:22px;
+    box-shadow:
+      0 30px 60px -20px rgba(0,0,0,.7),
+      inset 0 1px 0 rgba(255,255,255,.05),
+      0 0 0 1px #000;
+    position:relative;
+  }
+
+  .plate{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:12px;
+    padding:0 4px;
+  }
+  .brand{
+    color:var(--text-soft);
+    font-size:11px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+  }
+  .model{
+    color:var(--amber-dim);
+    font-size:11px;
+    letter-spacing:.15em;
+  }
+
+  .screw{
+    position:absolute;
+    width:8px;height:8px;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 35%, #6a6f77, var(--screw) 60%, #000);
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,.6);
+  }
+  .screw.tl{top:10px;left:10px;}
+  .screw.tr{top:10px;right:10px;}
+  .screw.bl{bottom:10px;left:10px;}
+  .screw.br{bottom:10px;right:10px;}
+
+  .display-housing{
+    background:var(--bezel);
+    border-radius:8px;
+    padding:14px 16px;
+    margin-bottom:16px;
+    box-shadow:inset 0 3px 10px rgba(0,0,0,.8), inset 0 0 0 1px #000;
+  }
+  .mode-row{
+    display:flex;
+    gap:10px;
+    font-size:10px;
+    letter-spacing:.15em;
+    color:var(--amber-dim);
+    margin-bottom:6px;
+    min-height:12px;
+  }
+  .mode-row .active{ color:var(--amber); text-shadow:0 0 6px rgba(255,180,84,.6); }
+
+  .expr{
+    min-height:18px;
+    color:var(--text-soft);
+    font-size:14px;
+    text-align:right;
+    overflow-x:auto;
+    white-space:nowrap;
+    margin-bottom:4px;
+  }
+  .result{
+    color:var(--amber);
+    font-size:36px;
+    text-align:right;
+    text-shadow:0 0 10px rgba(255,180,84,.45);
+    overflow-x:auto;
+    white-space:nowrap;
+    letter-spacing:.02em;
+  }
+
+  .pad{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:8px;
+  }
+
+  button{
+    border:none;
+    border-radius:7px;
+    padding:12px 0;
+    font-family:inherit;
+    font-size:13px;
+    color:#e8e6e1;
+    cursor:pointer;
+    position:relative;
+    transition:transform .05s ease, filter .1s ease;
+    box-shadow:
+      0 3px 0 rgba(0,0,0,.45),
+      inset 0 1px 0 rgba(255,255,255,.08);
+  }
+  button:active{
+    transform:translateY(2px);
+    box-shadow:
+      0 1px 0 rgba(0,0,0,.45),
+      inset 0 1px 0 rgba(255,255,255,.05);
+  }
+
+  .fn{ background:linear-gradient(180deg, var(--key-fn), #292c31); font-size:12px; color:var(--text-soft); }
+  .num{ background:linear-gradient(180deg, #33373f, var(--key-num)); font-size:15px; }
+  .op{ background:linear-gradient(180deg, #5a4630, var(--key-op)); color:var(--amber); }
+  .eq{ background:linear-gradient(180deg, #d17a3c, var(--key-eq)); color:#1a0f05; font-weight:bold; grid-column: span 2; }
+  .zero{ grid-column: span 2; }
+  .clear{ background:linear-gradient(180deg, #6b2f2f, #4a1f1f); color:#f4c9c9; }
+
+  .toggle-row{
+    display:flex;
+    justify-content:space-between;
+    margin-top:14px;
+    padding:0 2px;
+  }
+  .toggle{
+    font-size:10px;
+    letter-spacing:.15em;
+    color:var(--text-soft);
+    background:none;
+    border:1px solid #3a3e45;
+    border-radius:12px;
+    padding:5px 10px;
+    box-shadow:none;
+  }
+  .toggle.on{
+    color:var(--amber);
+    border-color:var(--amber-dim);
+  }
+
+  @media (max-width:420px){
+    .result{ font-size:28px; }
+    button{ padding:10px 0; font-size:12px; }
+  }
